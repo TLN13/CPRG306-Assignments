@@ -7,6 +7,9 @@ export default function Page() {
       <p>
         <Link href="/week-2" className="hover:underline"> → Go to Week 2</Link>
       </p>
+      <p>
+        <Link href="/week-2" className="hover:underline"> → Go to Week 3</Link>
+      </p>
     </main>
   );
 }
