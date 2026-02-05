@@ -7,8 +7,11 @@ export default function Page() {
       <p>
         <Link href="/week-2" className="hover:underline"> → Go to Week 2</Link>
       </p>
-       <p>
+      <p>
         <Link href="/week-3" className="hover:underline"> → Go to Week 3</Link>
+      </p>
+      <p>
+        <Link href="/week-4" className="hover:underline"> → Go to Week 4</Link>
       </p>
     </main>
   );
