@@ -9,10 +9,7 @@ const weeks = [
 
 export default function Page() {
   return (
-    <main
-      className="p-8 min-h-screen bg-[#bddfec] bg-cover bg-center"
-      style={{ backgroundImage: "url('/overlay.png')" }}
-    >
+    <main className="p-8 min-h-screen bg-[#bddfec] bg-cover bg-center">
       <h1 className="text-2xl font-bold mb-6 text-[#5A4D4D]">
         CPRG 306: Web Development 2 - Assignments
       </h1>
