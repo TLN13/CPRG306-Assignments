@@ -2,11 +2,13 @@ import ItemList from "./item-list";
 
 export default function Page() {
   return (
-    <main className="p-6 max-w-md mx-auto">
-      <h1 className="text-2xl font-bold mb-4 text-center">
+    <main className="min-h-screen p-6 bg-[#bddfec]">
+      <h1 className="text-4xl font-bold mb-6 text-center text-[#5A4D4D]">
         Shopping List
       </h1>
-      <ItemList />
+      <div className="max-w-md mx-auto">
+        <ItemList />
+      </div>
     </main>
   );
 }
