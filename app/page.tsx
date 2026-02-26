@@ -10,16 +10,23 @@ const weeks = [
 
 export default function Page() {
   return (
-    <main className="p-8 min-h-screen bg-[#bddfec] bg-cover bg-center">
-      <h1 className="text-2xl font-bold mb-6 text-[#5A4D4D]">
+    <main className="p-8 min-h-screen bg-[#E9E4E0]">
+      <h1 className="text-3xl font-bold mb-8 text-[#6E7575] text-center">
         CPRG 306: Web Development 2 - Assignments
       </h1>
-      <ul className="space-y-4">
+
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {weeks.map((week) => (
           <li key={week.href}>
             <Link
               href={week.href}
-              className="block p-4 border rounded bg-[#eccabd] hover:bg-[#e5b797] transition-colors duration-200 text-[#5A4D4D] font-semibold"
+              className="
+                block p-6 rounded-lg shadow-lg
+                bg-[#172A39] text-[#E9E4E0] font-semibold
+                hover:bg-[#FC563C] hover:text-white
+                transition-colors duration-300
+                text-center
+              "
             >
               → Go to {week.name}
             </Link>

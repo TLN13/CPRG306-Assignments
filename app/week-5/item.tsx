@@ -16,3 +16,8 @@ export default function Item({ item }: ItemProps) {
     </li>
   );
 }
+
+// #172A39
+// #E9E4E0
+// #FC563C
+// #6E7575

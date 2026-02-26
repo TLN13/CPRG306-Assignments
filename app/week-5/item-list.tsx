@@ -36,9 +36,9 @@ export default function ItemList() {
   }, {} as { [category: string]: ItemType[] });
 
   return (
-    <div className="p-6 bg-[#bddfec] min-h-screen">
+    <div className="p-6 bg-[#E9E4E0] min-h-screen">
       <div className="flex gap-2 mb-6">
-        <p className="font-semibold text-[#5A4D4D]">Sort by:</p>
+        <p className="font-semibold text-[#6E7575]">Sort by:</p>
         {["name", "category", "grouped"].map((type) => (
           <button
             key={type}
@@ -46,7 +46,7 @@ export default function ItemList() {
             className={`px-4 py-2 rounded font-medium transition-colors duration-200 ${
               sortBy === type
                 ? "bg-[#5A4D4D] text-white"
-                : "bg-[#eccabd] text-[#5A4D4D] hover:bg-[#E7D4C3]"
+                : "bg-[#172A39] text-[#E9E4E0] hover:bg-[#6E7575]"
             }`}
           >
             {type.charAt(0).toUpperCase() + type.slice(1)}
@@ -84,6 +84,7 @@ export default function ItemList() {
   );
 }
 
-
-// #bddfec
-// #eccabd
+// #172A39
+// #E9E4E0
+// #FC563C
+// #6E7575
