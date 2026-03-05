@@ -18,7 +18,7 @@ export default function Item({ item, onSelect }: ItemProps) {
   }
   return (
      <li
-      className="p-4 rounded bg-[#E9E4E0] hover:bg-[#BFBFBF] transition-colors duration-200 text-[#6E7575] border"
+      className="p-4 rounded bg-[#E9E4E0] hover:bg-[#BFBFBF] transition-colors duration-200 text-[#172A39] border"
       onClick={handleClick} 
     >
       <p className="font-semibold capitalize">{item.name}</p>

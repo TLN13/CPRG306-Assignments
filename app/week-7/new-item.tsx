@@ -29,7 +29,7 @@ export default function NewItem({ onAddItem }: NewItemProps) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-[#E9E4E0] p-6 rounded shadow-md space-y-6 text-[#6E7575]"
+      className="bg-[#E9E4E0] p-6 rounded shadow-md space-y-6 text-[#172A39]"
     >
       <h2 className="text-2xl font-bold text-center">Add New Item</h2>
 

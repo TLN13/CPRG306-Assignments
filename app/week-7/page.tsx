@@ -26,16 +26,49 @@ export default function Page() {
     setItems((current) => [...current, itemWithId]);
   };
 
+//  const handleItemSelect = (item: Item) => {
+//   console.log("Item selected:", item); 
+  
+//   // Better cleaning - keep meaningful words but remove emojis and special characters
+//   const cleanedName = item.name
+//     .replace(/([\u2700-\u27BF]|[\uE000-\uF8FF]|�[�-�]|�[�-�]|[\u2011-\u26FF]|�[�-�])/g, '') // Remove emojis and special characters
+//     .split(',')[0] // Take everything before the first comma
+//     .trim()
+//     .split(' ')
+//     .slice(0, 2) // Take first 1-2 words for better meal search
+//     .join(' ');
+  
+//   console.log("Cleaned name:", cleanedName);
+//   setSelectedItemName(cleanedName);
+// };
+
   const handleItemSelect = (item: Item) => {
-    console.log("Item selected:", item); 
-    const cleanedName = item.name
-      .replace(/([\u2700-\u27BF]|[\uE000-\uF8FF]|�[�-�]|�[�-�]|[\u2011-\u26FF]|�[�-�])/g, '')
-      .split(",")[0]
-      .trim();
-    console.log("Selected Item: ", cleanedName);
-    console.log("Cleaned Item Name:", cleanedName);
-    setSelectedItemName(cleanedName); 
-  };
+  console.log("========== ITEM SELECTED ==========");
+  console.log("Original item:", item);
+  console.log("Original name:", item.name);
+  
+  const withoutEmojis = item.name.replace(/([\u2700-\u27BF]|[\uE000-\uF8FF]|�[�-�]|�[�-�]|[\u2011-\u26FF]|�[�-�])/g, '');
+  console.log("Step 1 - After emoji removal:", withoutEmojis);
+
+  const afterComma = withoutEmojis.split(',')[0];
+  console.log("Step 2 - After comma split:", afterComma);
+
+  const trimmed = afterComma.trim();
+  console.log("Step 3 - After trim:", trimmed);
+  
+
+  const cleanedName = trimmed.split(' ')[0];
+  console.log("Step 4 - After taking first word:", cleanedName);
+  
+  const finalIngredient = cleanedName.toLowerCase();
+  console.log("Step 5 - Final ingredient:", finalIngredient);
+  
+  console.log("Setting selectedItemName to:", finalIngredient);
+  console.log("===================================");
+  
+  setSelectedItemName(finalIngredient);
+};
+
 
   return (
     <main className="min-h-screen p-6 bg-[#E9E4E0]">
@@ -44,26 +77,25 @@ export default function Page() {
       </h1>
 
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-6">
-        {/* Left side: New Item form */}
-        <div className="md:w-1/3">
-          <div className="p-4 rounded shadow-md bg-[#172A39]">
+        {/* Left side: New Item form + Meal Ideas */}
+        <div className="md:w-1/3 flex flex-col gap-6">
+          <div className="p-4 rounded shadow-md bg-[#6E7575]">
             <NewItem onAddItem={handleAddItem} />
           </div>
-        </div>
 
-        {/* Right side: Item list and Meal ideas */}
-        <div className="md:w-2/3">
-          <div className="p-4 rounded shadow-md bg-[#FC563C]">
-            {/* Item List component */}
-            <ItemList items={items} onItemSelect={handleItemSelect} />
-          </div>
-
-          {/* Meal Ideas component */}
+          {/* Meal Ideas component under New Item */}
           {selectedItemName && (
-            <div className="mt-6 p-4 rounded shadow-md bg-[#E9E4E0]">
-              <MealIdeas ingredient={selectedItemName} /> {/* Pass the selected item name */}
+            <div className="p-4 rounded shadow-md bg-[#6E7575]">
+              <MealIdeas ingredient={selectedItemName} />
             </div>
           )}
+        </div>
+
+        {/* Right side: Item list */}
+        <div className="md:w-2/3">
+          <div className="p-4 rounded shadow-md bg-[#6E7575]">
+            <ItemList items={items} onItemSelect={handleItemSelect} />
+          </div>
         </div>
       </div>
     </main>

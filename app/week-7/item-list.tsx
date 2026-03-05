@@ -32,10 +32,10 @@ export default function ItemList({ items, onItemSelect }: Items) {
   }, {} as { [category: string]: ItemType[] });
 
   return (
-    <div className="p-6 rounded shadow-md bg-[#E9E4E0] min-h-screen text-[#6E7575]">
+    <div className="p-6 rounded shadow-md bg-[#E9E4E0] min-h-screen text-[#172A39]">
       {/* Sort Buttons */}
       <div className="flex gap-2 mb-6">
-        <p className="font-semibold text-[#6E7575]">Sort by:</p>
+        <p className="font-semibold text-[#172A39]">Sort by:</p>
 
         {["name", "category", "grouped"].map((type) => (
           <button
@@ -43,8 +43,8 @@ export default function ItemList({ items, onItemSelect }: Items) {
             onClick={() => setSortBy(type as "name" | "category" | "grouped")}
             className={`px-4 py-2 rounded font-medium transition-colors duration-200 ${
               sortBy === type
-                ? "bg-[#172A39] text-[#E9E4E0]"
-                : "bg-[#E9E4E0] text-[#172A39] hover:bg-[#6E7575] hover:text-[#E9E4E0]"
+                ? "bg-[#FC563C] text-[#E9E4E0]"
+                : "bg-[#E9E4E0] text-[#172A39] hover:bg-[#172A39] hover:text-[#E9E4E0]"
             }`}
           >
             {type.charAt(0).toUpperCase() + type.slice(1)}
@@ -59,7 +59,7 @@ export default function ItemList({ items, onItemSelect }: Items) {
             .sort()
             .map((category) => (
               <div key={category}>
-                <h2 className="font-bold capitalize mb-2 text-[#6E7575]">
+                <h2 className="font-bold capitalize mb-2 text-[#172A39]">
                   {category}
                 </h2>
 
