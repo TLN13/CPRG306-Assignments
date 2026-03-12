@@ -28,14 +28,13 @@ export default function Page() {
 
 //  const handleItemSelect = (item: Item) => {
 //   console.log("Item selected:", item); 
-  
-//   // Better cleaning - keep meaningful words but remove emojis and special characters
+
 //   const cleanedName = item.name
-//     .replace(/([\u2700-\u27BF]|[\uE000-\uF8FF]|�[�-�]|�[�-�]|[\u2011-\u26FF]|�[�-�])/g, '') // Remove emojis and special characters
+//     .replace(/([\u2700-\u27BF]|[\uE000-\uF8FF]|�[�-�]|�[�-�]|[\u2011-\u26FF]|�[�-�])/g, '') 
 //     .split(',')[0] // Take everything before the first comma
 //     .trim()
 //     .split(' ')
-//     .slice(0, 2) // Take first 1-2 words for better meal search
+//     .slice(0, 2)
 //     .join(' ');
   
 //   console.log("Cleaned name:", cleanedName);
@@ -48,20 +47,20 @@ export default function Page() {
   console.log("Original name:", item.name);
   
   const withoutEmojis = item.name.replace(/([\u2700-\u27BF]|[\uE000-\uF8FF]|�[�-�]|�[�-�]|[\u2011-\u26FF]|�[�-�])/g, '');
-  console.log("Step 1 - After emoji removal:", withoutEmojis);
+  console.log("After emoji removal:", withoutEmojis);
 
   const afterComma = withoutEmojis.split(',')[0];
-  console.log("Step 2 - After comma split:", afterComma);
+  console.log("After comma split:", afterComma);
 
   const trimmed = afterComma.trim();
-  console.log("Step 3 - After trim:", trimmed);
+  console.log("After trim:", trimmed);
   
 
   const cleanedName = trimmed.split(' ')[0];
-  console.log("Step 4 - After taking first word:", cleanedName);
+  console.log("After taking first word:", cleanedName);
   
   const finalIngredient = cleanedName.toLowerCase();
-  console.log("Step 5 - Final ingredient:", finalIngredient);
+  console.log("Final ingredient:", finalIngredient);
   
   console.log("Setting selectedItemName to:", finalIngredient);
   console.log("===================================");
